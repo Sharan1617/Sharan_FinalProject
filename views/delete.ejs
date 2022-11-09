@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Orders</title>
+</head>
+<body>
+    <style>
+        body
+        {
+        width: 1300px;
+        margin: 20px auto;
+        /* margin-top: 20px; */
+        /* background-color: #e4e4fe; */
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        .grid
+        {
+        display: grid;
+        } 
+        .headerLogoAndTitle
+        {
+        grid-template-columns: 1fr 20fr;
+        } 
+        .headerLogoAndTitle img
+        {
+            border-radius: 10px;
+        } 
+        nav 
+        {
+        padding: 0;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid black;
+        }
+        a
+        {
+        text-decoration: none;
+        margin: 10px;
+        font-size: 20px;
+        color: #000000;
+        }
+        nav a:hover {
+        background-color: #58b4ba9d;
+        color: #000000;
+        font-size: 30px;
+        }
+        table{
+        width: 100%;
+        border: 3px solid rgb(0, 0, 0);
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        }
+        th{
+        text-align: left;
+        border: 2px solid black;
+        padding: 10px;
+        font-size: 30px;
+        }
+        td
+        {
+        text-align: left;
+        border: 2px solid black;
+        padding: 10px;
+        }
+        main{
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        a{
+        color: white;
+        }
+        h1
+        {
+        text-align: center;
+        }       
+    </style>
+  </head>
+  <body>
+    <main>
+        <%- include('partials/logoTitle.ejs') %> 
+        <table>
+            <h1>The User ID :<%=_id %> has been deleted</h1>
+            <nav>
+              <a href="/allComplaint">All Complaints</a>
+              <a href="/logout">Logout</a>
+            </nav>
+              <tr>
+                <th>Name</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+              </tr>
+
+            <tr>
+                <td><%= name %></td>
+                <td><%= phoneNumber%></td>
+                <td><%= email %></td>            
+            </tr>             
+          </table>
+    </main>
+</body>
+</html>

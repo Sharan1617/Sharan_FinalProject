@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+</head>
+<body>
+    <style>
+        body
+        {
+            width: 1300px;
+            margin: 80px auto;
+            /* margin-top: 20px; */
+            /* background-color: #e4e4fe; */
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        .grid
+        {
+        display: grid;
+        } 
+        .headerLogoAndTitle
+        {
+        grid-template-columns: 1fr 20fr;
+        } 
+
+        table{
+            width: 100%;
+            border: 3px solid purple;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th{
+            text-align: left;
+            border: 2px solid black;
+            padding: 10px;
+            font-size: 40px;
+        }
+        td
+        {
+            text-align: left;
+            border: 2px solid black;
+            padding: 10px;
+            font-size: 25px;
+        }
+        main{
+            /* width: 1000px; */
+            /* background-color: rgba(154, 123, 123, 0.513); */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a{
+            color: white;
+        }
+        h1
+        {
+            text-align: center;
+        }
+        p
+        {
+            text-align: center;
+            font-size: 25px;
+            font-family: cursive;
+        }
+        nav 
+        {
+        padding: 0;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        }
+        a
+        {
+        text-decoration: none;
+        margin: 30px;
+        font-size: 20px;
+        color: #000000;
+        }
+        nav a:hover {
+        background-color: #58b4ba9d;
+        color: #000000;
+        font-size: 30px;
+        }
+        table img
+        {
+            width: 50%;
+        }
+    </style>
+    <main>
+        <%- include('partials/logoTitle.ejs') %> 
+  <nav>
+    <a href="/">Home</a>
+ </nav>
+          <h1>Thank You</h1>
+          <p>Your request has been submitted</p>
+        <% 
+            if(typeof(name) != 'undefined') 
+            {
+        %>
+
+                <table>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>PhoneNumber</th>
+                        <th>UserDescription</th>
+                        <th>Image</th>
+                      </tr>
+        
+                    <tr>
+                        <td><%= name %></td>
+                        <td><%= email %></td>   
+                        <td><%= phoneNumber%></td>
+                        <td><%- userDescription %></td>   
+                        <td><img src="/uploads/<%= userImageName%>" alt="User Input Image"></td>
+                    </tr>
+                      
+              </table>
+        <%
+        }
+        %>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,116 @@
+
+main
+{
+    margin-top: 20px;
+    /* background-color: #000000; */
+}
+body
+{
+    width: 1000px;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-image: url(/images/backgroundImage.jpg);
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+
+ .grid
+{
+    display: grid;
+} 
+.headerLogoAndTitle
+{
+    grid-template-columns: 1fr 20fr;
+} 
+
+header
+{
+    padding: 10px;
+}
+header img
+{
+    border-radius: 20px;
+}   
+nav 
+{
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0 40px;
+}
+a
+{
+    text-decoration: none;
+    margin: 60px;
+    font-size: 30px;
+    color: #000000;
+}
+nav a:hover {
+    background-color: #58b4ba9d;
+    color: #000000;
+    font-size: 30px;
+}
+input[type=submit]:hover
+{
+    background-color: #58b4ba9d;
+    color: #000000;
+    font-size: 40px;
+}
+input[type=submit]
+{
+    background-color: #b6dadd91;
+    color: #000000;
+    font-size: 30px;
+    width: 930px;
+}
+h1
+{
+    text-align: center;
+}
+
+label
+{
+  width: 200px;
+  /* float: left; */
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+input{
+    font-size: 25px;
+    width: 910px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.myForm
+{
+    /* border: 1px solid rgb(0, 0, 0); */
+    /* width: 1400px; */
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+footer
+{
+    background-color: #000000;
+    color: white;
+}
+footer p
+{
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+#loginError
+{
+    font-size: 30px;
+    text-align: center;
+}

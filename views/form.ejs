@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharan Mehta Buildings</title>
+    <script src="js/form.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- <header class="grid headerLogoAndTitle">
+        <div>
+            <img src="/images/SMBLogo.png" alt="Image should be here">
+        </div>
+        <div>
+            <h1>Solid foundations for a brighter future.</h1>
+        </div>
+  </header> -->
+    <main>
+      <%- include('partials/logoTitle.ejs') %> 
+      <nav>
+        <a href="/login">Login</a>
+      </nav>
+      <div class="myForm">
+                <p id="displayError">
+                        <!-- Displaying errors -->
+                    <% 
+                        if(typeof(errors) != 'undefined'){
+                          for(var error of errors){
+                            %>
+                              <%= error.msg %> <br>
+                            <%
+                          }
+                        }
+                    %>
+                </p>
+                <!-- Creating a form  -->
+         <form name="myform" method="Post" onsubmit="return formSubmit();" action="" enctype="multipart/form-data">
+                <h2>New Request</h2>
+                <!-- Label and input for name -->
+                <label for="name">Name :</label> <br> <br>
+                <input class="formInputField" name="name" id="name" placeholder="Enter Name">
+
+                <label for="phoneNumber">Phone Number</label>
+                <input class="formInputField" id="phoneNumber" name="phoneNumber" placeholder="eg: 5198201234">
+                <br />
+                <br />
+                <label for="email">Email</label>
+                <input class="formInputField" id="email" name="email" placeholder="email@domain.com">
+                <br />
+                <br />
+
+                <label for="userImage">Image</label>
+                <br>
+                <br>
+
+                <div class="formImage">
+                    <input class="formInputField" type="file" id="userImage" name="userImage">
+                </div>
+                <br />
+                <br />
+
+                <p id="userDescriptionForm">Complaint Box</p>
+                <input class="formInputField" type="text" id="userDescription" name="userDescription">
+
+                <div class="submitClass">
+                  <input id="submitButton" type="submit" value="Submit">   
+                </div>
+        </form>
+
+      </div>        
+    </main>
+    <%- include('partials/footer.ejs') %> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+          selector: '#userDescription'
+        });
+    </script>
+</body>
+
+</html>

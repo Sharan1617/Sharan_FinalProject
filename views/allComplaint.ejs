@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All User Complaints</title>
+</head>
+<body>
+    <style>
+        .grid
+        {
+        display: grid;
+        } 
+        .headerLogoAndTitle
+        {
+        grid-template-columns: 1fr 10fr;
+        margin-bottom: 30px;
+        } 
+        body
+        {
+            width: 1800px;
+            margin: 20px auto;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+            color: black;
+        }
+        table{
+            width: 100%;
+            border: 3px solid rgb(0, 0, 0);
+            margin-bottom: 20px;          
+        }
+        th{
+            text-align: left;
+            border: 2px solid black;
+            padding: 10px;
+            font-size: 30px;
+        }
+        td
+        {
+            text-align: left;
+            border: 2px solid black;
+            padding: 10px;
+            font-size: 20px;
+        }
+        main{
+
+            font-family:cursive
+        }
+         h1
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        }
+        p
+        {
+            font-style: italic;
+            size: 10px;
+            font-size: 22px;
+            text-align: center;
+        }
+        nav 
+        {
+            /* padding: 0; */
+            text-align: center;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            background-color: black;
+        }
+        nav a
+        {
+        text-decoration: none;
+        margin: 10px;
+        font-size: 30px;
+        color: #ffffff;
+        }
+        nav a:hover {
+        background-color: #58b4ba9d;
+        color: #ffffff;
+        font-size: 40px;
+        }
+        a
+        {
+        text-decoration: line;
+        color: #000000;
+        }
+        footer
+        {
+        background-color: #000000;
+        color: white;
+        }
+        footer p
+        {
+        font-size: 30px;
+        padding: 20px;
+        text-align: center;
+        }
+        .headerLogoAndTitle img
+        {
+            border-radius: 20px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <main>
+    <%- include('partials/logoTitle.ejs') %> 
+    <div class="topHeading">
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+            </nav>
+            <h1>Complaint Dashboard</h1>
+    </div>
+
+    <table>
+        <tr>
+        <th>Name</th>
+        <th>PhoneNumber</th>
+        <th>Email</th>
+        <th>View</th>
+        <th>DELETE</th>
+        <th>EDIT</th>
+        </tr>
+
+    <%
+        for(var order of orders){
+            %>
+                <tr>
+                    <td><%= order.name %></td> 
+                    <td><%= order.phoneNumber%></td>
+                    <td><%= order.email %></td>
+                    <td><a href="/print/<%= order._id %>" target="_blank">View</a></td>
+                    <td><a href="/delete/<%= order._id %>">Delete</a></td>
+                    <td><a href="/edit/<%= order._id %>">Edit</a></td>
+                </tr>
+            <%
+        }
+    %>              
+</table>        
+    </main>
+    <%- include('partials/footer.ejs') %> 
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single User Request</title>
+    <link rel="stylesheet" href="/css/singlePage.css">
+</head>
+<body>
+  </head>
+  <body>
+    <main>
+        <table>
+            <%- include('partials/logoTitle.ejs') %> 
+            <h1>User Information</h1>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/allComplaint"  target="_blank">All Complaints</a>
+            </nav>
+            <h2>User ID :<%=_id %></h2>
+              <tr>
+                <th>Name</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+                <th>Description</th>
+              </tr>
+
+            <tr>
+                <td><%= name %></td>
+                <td><%= phoneNumber%></td>
+                <td><%= email %></td>
+                <td><%- userDescription %></td>            
+            </tr>
+              
+          </table>
+          <div class="singlePageImage">
+            <img src="/uploads/<%= userImageName%>" alt="User Input Image">
+          </div>
+          
+          <%- include('partials/footer.ejs') %> 
+    </main>
+</body>
+</html>
